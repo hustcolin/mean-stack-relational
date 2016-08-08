@@ -1,6 +1,8 @@
 //Setting up route
 angular.module('mean').config(['$stateProvider','$urlRouterProvider', function($stateProvider,$urlRouterProvider) {
 
+    'use strict';
+
     $urlRouterProvider.otherwise(function($injector, $location){
         $injector.invoke(['$state', function($state) {
             $state.go('404');
@@ -42,12 +44,13 @@ angular.module('mean').config(['$stateProvider','$urlRouterProvider', function($
         })
         .state('404',{
             templateUrl: 'views/404.html'
-        })
+        });
 }
 ]);
 
 //Setting HTML5 Location Mode
 angular.module('mean').config(['$locationProvider', function ($locationProvider) {
+    'use strict';
     $locationProvider.html5Mode(true);
 
 }]);

@@ -1,4 +1,5 @@
 angular.module('mean.auth').controller('socialAuth', ['$scope', 'Global','$state', 'FacebookAuth','TwitterAuth', 'GoogleAuth', function ($scope, Global, $state, FacebookAuth, TwitterAuth, GoogleAuth) {
+    'use strict';
     $scope.global = Global;
 
     $scope.menu = [{

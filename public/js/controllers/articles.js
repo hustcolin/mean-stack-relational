@@ -1,4 +1,5 @@
 angular.module('mean.articles').controller('ArticlesController', ['$scope', '$stateParams', 'Global', 'Articles', '$state', function ($scope, $stateParams, Global, Articles, $state) {
+    'use strict';
     $scope.global = Global;
 
     $scope.create = function() {
@@ -17,7 +18,7 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
 
     $scope.remove = function(article) {
         if (article) {
-            article.$remove();  
+            article.$remove();
 
             for (var i in $scope.articles) {
                 if ($scope.articles[i] === article) {
@@ -38,7 +39,7 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
         }
         article.updated.push(new Date().getTime());
         article.$update(function() {
-        $state.go('viewArticle',{articleId : article.id})
+        $state.go('viewArticle',{articleId : article.id});
 
         });
     };
