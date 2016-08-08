@@ -5,6 +5,7 @@
  */
 var express     = require('express');
 var fs          = require('fs');
+var path = require('path');
 
 /**
  * Main application entry file.
@@ -22,7 +23,10 @@ winston.debug('Accepted Config:',config);
 var db              = require('./config/sequelize');
 var passport        = require('./config/passport');
 
+var staticPath = path.resolve('public');
+
 var app = express();
+app.use(serveStatic(staticPath));
 
 //Initialize Express
 require('./config/express')(app, passport);
