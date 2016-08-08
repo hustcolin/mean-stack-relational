@@ -6,6 +6,7 @@
 var express     = require('express');
 var fs          = require('fs');
 var path = require('path');
+var serveStatic = require('serve-static');
 
 /**
  * Main application entry file.
